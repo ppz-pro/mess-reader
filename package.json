@@ -1,0 +1,35 @@
+{
+  "name": "mess-reader",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "webpack serve --open --config ./build/dev.js",
+    "pro": "webpack --config ./build/pro"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppz-pro/mess-reader.git"
+  },
+  "author": "gy0318",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/ppz-pro/mess-reader/issues"
+  },
+  "homepage": "https://github.com/ppz-pro/mess-reader#readme",
+  "devDependencies": {
+    "coffee-loader": "^4.0.0",
+    "coffeescript": "^2.7.0",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "stylus": "^0.59.0",
+    "stylus-loader": "^7.1.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "@ppzp/utils": "^0.0.6",
+    "valtio": "^1.10.3"
+  }
+}
