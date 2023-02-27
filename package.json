@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@ppzp/utils": "^0.0.6",
+    "epubjs": "^0.3.93",
     "valtio": "^1.10.3"
   }
 }
