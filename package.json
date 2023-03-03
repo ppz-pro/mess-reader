@@ -17,6 +17,12 @@
   },
   "homepage": "https://github.com/ppz-pro/mess-reader#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-plugin-transform-react-pug": "^7.0.1",
     "coffee-loader": "^4.0.0",
     "coffeescript": "^2.7.0",
     "css-loader": "^6.7.3",
@@ -29,8 +35,9 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@ppzp/utils": "^0.0.6",
     "epubjs": "^0.3.93",
-    "valtio": "^1.10.3"
+    "valtio": "^1.10.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
