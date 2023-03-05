@@ -1,10 +1,11 @@
 {
   "name": "mess-reader",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "scripts": {
     "dev": "webpack serve --open --config ./build/dev.js",
-    "pro": "webpack --config ./build/pro"
+    "pro": "webpack --config ./build/pro",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -15,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/ppz-pro/mess-reader/issues"
   },
-  "homepage": "https://github.com/ppz-pro/mess-reader#readme",
+  "homepage": "https://ppz-pro.github.io/mess-reader/",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
@@ -26,6 +27,7 @@
     "coffee-loader": "^4.0.0",
     "coffeescript": "^2.7.0",
     "css-loader": "^6.7.3",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "stylus": "^0.59.0",
