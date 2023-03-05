@@ -3,16 +3,21 @@ import Epub from 'epubjs'
 
 import './index.styl'
 import Layout from '../../cmp/layout/index.coffee'
-import demoBook from './demo.epub'
 import { map } from '../../../lib/mess-router/index.coffee'
+import CurrentBook from '../../mess/current-book.coffee'
+import { pushState } from '../../../lib/history/index.coffee'
 
 map.push('/read', ->
   reader = useRef()
   [{ book, render }, setEpub] = useState({})
   useEffect(->
+    args = CurrentBook()
+    pushState('/') unless args
     renderDom = reader.current
     { width, height } = renderDom.getBoundingClientRect()
-    book = Epub(demoBook)
+    book = Epub()
+    
+    book.open(...args)
     render = book.renderTo(renderDom, {
       width, height
     })
