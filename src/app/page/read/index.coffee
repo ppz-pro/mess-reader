@@ -16,9 +16,17 @@ export default ->
     })
     render.display()
     setEpub({ book, render })
+    
+    render.on('keyup', onKeyup)
+    document.addEventListener('keyup', onKeyup)
     return
   , [])
 
+  onKeyup = ({ key }) ->
+    if key == 'ArrowLeft'
+      prevPage()
+    else if key == 'ArrowRight'
+      nextPage()
   prevPage = ->
     render.prev()
   nextPage = ->
