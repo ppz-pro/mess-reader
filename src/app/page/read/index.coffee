@@ -8,9 +8,11 @@ export default ->
   reader = useRef()
   [{ book, render }, setEpub] = useState({})
   useEffect(->
+    renderDom = reader.current
+    { width, height } = renderDom.getBoundingClientRect()
     book = Epub(demoBook)
-    render = book.renderTo(reader.current, {
-      flow: 'paginated'
+    render = book.renderTo(renderDom, {
+      width, height
     })
     render.display()
     setEpub({ book, render })
