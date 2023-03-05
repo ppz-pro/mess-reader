@@ -2,6 +2,8 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 
 import './index.styl'
-import Read from '../page/read/index.coffee'
+import '../page/home/index.coffee'
+import '../page/read/index.coffee'
+import { Router } from '../../lib/mess-router/index.coffee'
 
-createRoot(document.getElementById('app')).render(<Read />)
+createRoot(document.getElementById('app')).render(<Router />)

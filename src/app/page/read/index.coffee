@@ -4,8 +4,9 @@ import Epub from 'epubjs'
 import './index.styl'
 import Layout from '../../cmp/layout/index.coffee'
 import demoBook from './demo.epub'
+import { map } from '../../../lib/mess-router/index.coffee'
 
-export default ->
+map.push('/read', ->
   reader = useRef()
   [{ book, render }, setEpub] = useState({})
   useEffect(->
@@ -40,3 +41,4 @@ export default ->
         .reader(ref = reader)
         .right(onClick = nextPage)
   """
+)

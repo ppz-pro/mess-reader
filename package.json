@@ -35,9 +35,10 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@ppzp/utils": "file:../utils.js",
     "epubjs": "^0.3.93",
-    "valtio": "^1.10.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "valtio": "^1.10.3"
   }
 }
