@@ -1,22 +1,21 @@
 import React, { useEffect } from 'react'
 import { notEmptyString } from '@ppzp/utils/type'
 
-import { pushState } from '../history/index.coffee'
-
 export config =
   404: -> <div>404</div>
 
-getPath = -> location.pathname
+getPath = -> location.hash.slice(1)
 
 export class Router extends React.Component
-  constructor: ->
-    super()
+  constructor: (props) ->
+    super(props)
     @state =
       path: getPath()
 
   componentDidMount: ->
-    pushState.listen (state, unused, path) =>
-      @setState({ path })
+    window.addEventListener('hashchange', =>
+      @setState({ path: getPath() })
+    )
 
   render: ->
     path = @state.path || '/'
@@ -34,3 +33,5 @@ export map = do ->
       m[path] = Component
     get: (path) -> m[path]
 
+export nav2 = (path) ->
+  location.hash = path

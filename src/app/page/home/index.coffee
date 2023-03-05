@@ -2,14 +2,13 @@ import React, { useState, useRef } from 'react'
 
 import './index.styl'
 import Layout from '../../cmp/layout/index.coffee'
-import { map } from '../../../lib/mess-router/index.coffee'
-import { pushState } from '../../../lib/history/index.coffee'
+import { map, nav2 } from '../../../lib/mess-router/index.coffee'
 import CurrentBook from '../../mess/current-book.coffee'
 
 map.push('/', ->
   onBookProvider = ->
     CurrentBook(arguments)
-    pushState({}, '', '/read')
+    nav2('/read')
 
   pug"""
     Layout.home
@@ -24,7 +23,7 @@ FileFromLocal = ({ onBookProvider }) ->
   onFileChange = (evt) ->
     file = evt.currentTarget.files[0]
     return unless file
-    alert('你的浏览器不支持从本地打开') unless window.FileReader
+    return alert('你的浏览器不支持从本地打开') unless window.FileReader
 
     fr = new FileReader()
     fr.onload = (evt) ->
@@ -39,7 +38,7 @@ FileFromLocal = ({ onBookProvider }) ->
 FileFromURI = ({ onBookProvider }) ->
   [uri, setURI] = useState()
   loadBook = ->
-    alert('输入链接先') unless uri
+    return alert('输入链接先') unless uri
     onBookProvider(uri)
   return pug"""
     .item
