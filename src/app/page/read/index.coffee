@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import Epub from 'epubjs'
 
 import './index.styl'
+import Layout from '../../cmp/layout/index.coffee'
 import demoBook from './demo.epub'
 
 export default ->
@@ -33,8 +34,9 @@ export default ->
     render.next()
   
   pug"""
-    #mess-reader
-      .left(onClick = prevPage)
-      .reader(ref = reader)
-      .right(onClick = nextPage)
+    Layout.reader
+      #mess-reader
+        .left(onClick = prevPage)
+        .reader(ref = reader)
+        .right(onClick = nextPage)
   """
