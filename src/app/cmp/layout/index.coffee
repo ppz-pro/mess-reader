@@ -2,6 +2,6 @@ import React from 'react'
 
 export default ({ className, children }) ->
   pug"""
-    .mess-reader-page(className = className)
-      = children
+    .mess-reader-layout
+      div(className = className)= children
   """

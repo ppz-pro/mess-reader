@@ -11,7 +11,7 @@ map.push('/', ->
     nav2('/read')
 
   pug"""
-    Layout.home
+    Layout.home-page
       main
         FileFromLocal(onBookProvider = onBookProvider)
         FileFromURI(onBookProvider = onBookProvider)

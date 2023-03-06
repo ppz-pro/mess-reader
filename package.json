@@ -37,7 +37,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@ppzp/utils": "file:../utils.js",
+    "@ppzp/utils": "^0.0.7",
     "epubjs": "^0.3.93",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
