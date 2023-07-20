@@ -16,7 +16,7 @@ module.exports = {
   bundle: true
   sourcemap: true
   outdir: 'dist'
-  logLevel: 'debug'
+  logLevel: 'info'
   plugins: [
     Plugin_coffee()
     Plugin_styl()

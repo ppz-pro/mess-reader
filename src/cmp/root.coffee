@@ -1,14 +1,14 @@
 import { E } from '@ppzp/utils.rc'
-import { useState_current_book } from './state.coffee'
+import { useValue_book_source } from './state.coffee'
 import './root.styl'
 
 import Book from './book/index.coffee'
 import Open from './open/index.coffee'
 
 export default ->
-  current_book = useState_current_book()
+  book_source = useValue_book_source()
   return E.div plass: 'mess_reader_root',
-    if current_book.value
+    if book_source
       E Book
     else
       E Open
