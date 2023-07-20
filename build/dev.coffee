@@ -1,17 +1,8 @@
 { context } = require 'esbuild'
-plugins = [
-  'esbuild-coffeescript'
-].map require
+options = require './index.coffee'
 
 do ->
-  ctx = await context {
-    entryPoints: ['src/index.coffee']
-    bundle: true
-    sourcemap: true
-    outdir: 'dist'
-    logLevel: 'debug'
-    plugins: plugins.map (Plugin) -> Plugin()
-  }
+  ctx = await context options
 
   # 监听文件变化
   await ctx.watch()
