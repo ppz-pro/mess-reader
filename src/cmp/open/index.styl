@@ -1,0 +1,23 @@
+@require '../../style/base'
+
+section.open
+  display: flex
+  align-items: center
+  justify-content: center
+  .open_wrapper
+    .row
+      display: flex
+      button, input:not([type])
+        font-size: inherit
+        height: 2rem
+        padding: 0 1rem
+      input[type=file]
+        display: none
+      input:not([type])
+        outline: none
+        border: none
+        background: transparent
+        width: 20rem
+        border: 1px solid transparent
+        &:focus
+          border-bottom: 1px solid $color(.06)
