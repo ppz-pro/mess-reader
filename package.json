@@ -17,7 +17,9 @@
   "homepage": "https://ppz-pro.github.io/mess-reader/",
   "devDependencies": {
     "esbuild": "^0.18.14",
-    "esbuild-coffeescript": "^2.2.0"
+    "esbuild-coffeescript": "^2.2.0",
+    "esbuild-stylus-loader": "^0.4.2",
+    "stylus": "^0.59.0"
   },
   "dependencies": {
     "@ppzp/utils.rc": "^0.2.2",

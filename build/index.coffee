@@ -1,7 +1,7 @@
 FS = require 'fs'
-plugins = [
-  'esbuild-coffeescript'
-].map require
+
+Plugin_coffee = require 'esbuild-coffeescript'
+{ stylusLoader: Plugin_styl } = require 'esbuild-stylus-loader'
 
 try
   FS.mkdirSync('dist')
@@ -17,5 +17,8 @@ module.exports = {
   sourcemap: true
   outdir: 'dist'
   logLevel: 'debug'
-  plugins: plugins.map (Plugin) -> Plugin()
+  plugins: [
+    Plugin_coffee()
+    Plugin_styl()
+  ]
 }
