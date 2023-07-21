@@ -1,15 +1,12 @@
 
 import { E, useEffect2 } from '@ppzp/utils.rc'
-import Epub from 'epubjs'
 import { useRect } from '../../utils.coffee'
-import { useValue_book_source } from '../state.coffee'
+import { useValue_epub_book } from '../state.coffee'
 import './index.styl'
 
 export default ->
-  book_source = useValue_book_source()
+  book = useValue_epub_book()
   ref_viewer = useRect (rect) ->
-    book = Epub()
-    book.open book_source # http://epubjs.org/documentation/0.3/#bookopen
     book.renderTo ref_viewer.current, rect
     .display()
   
