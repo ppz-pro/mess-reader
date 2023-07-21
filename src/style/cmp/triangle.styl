@@ -1,0 +1,11 @@
+.triangle
+  display: inline-block
+  width: 1em
+  height: 1em
+  &::after
+    content: ''
+    display: block
+    border: .5em solid currentColor
+    border-left-color: transparent
+    border-top-color: transparent
+    transform: translateY(-25%) rotate(45deg)

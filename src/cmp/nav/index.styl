@@ -1,0 +1,29 @@
+@require '../../style/base'
+
+nav
+  width: 16rem
+  background: $color(.016)
+  .drawer_container
+    height: 100%
+    display: flex
+    flex-direction: column
+    & > div
+      transition: flex .3s ease
+      flex-basis: 2rem
+      overflow: hidden
+      .title
+        display: flex
+        align-items: center
+        justify-content: space-between
+        height: 2rem
+        padding: 0 1rem
+        cursor: pointer
+        background: $color(.016)
+        user-select: none
+        &:hover .triangle
+          color: $color()
+        .triangle
+          font-size: 10px
+          color: $color(.6)
+          transition: all .3s
+          transform: var(--rotate)

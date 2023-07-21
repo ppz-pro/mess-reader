@@ -11,8 +11,6 @@ export default ->
     .display()
   
   return E.section plass: 'book',
-    E plass: 'title',
-      '标题'
-    E
-      plass: 'viewer'
+    E.header '标题'
+    E.article
       ref: ref_viewer
