@@ -1,5 +1,16 @@
 # mess-reader
 ## 开发
+``` bash
+# 克隆仓库
+git clone https://github.com/ppz-pro/mess-reader.git
+# 进入项目目录
+cd mess-reader
+# 安装依赖
+npm install
+# 开发模式
+npm run dev
+```
+
 ##### 库们
 + [esbuild](https://esbuild.github.io/) 打包
 + [react](https://react.dev/) ui

@@ -1,9 +1,10 @@
 {
   "name": "mess-reader",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "scripts": {
-    "dev": "coffee build/dev.coffee"
+    "dev": "coffee build/dev.coffee",
+    "publish": "coffee build/publish.coffee"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
     "esbuild": "^0.18.14",
     "esbuild-coffeescript": "^2.2.0",
     "esbuild-stylus-loader": "^0.4.2",
+    "gh-pages": "^5.0.0",
     "stylus": "^0.59.0"
   },
   "dependencies": {
