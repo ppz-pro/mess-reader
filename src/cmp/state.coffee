@@ -1,19 +1,30 @@
-import { useEffect2 } from '@ppzp/utils.rc'
+import { useEffect2, useMemo2 } from '@ppzp/utils.rc'
 import create_external_state from 'state_mini'
 import Epub from 'epubjs'
 
-# book source: 本地文件、网络链接
-useState_book_source = create_external_state()
-export useSet_book_source = -> useState_book_source().set2
-
 # Epub 实例
-useState_epub_book = create_external_state()
-export useValue_epub_book = -> useState_epub_book().value
-# 监听 source，设置 Epub 实例
-useState_book_source.subscribe (source) ->
-  if source
-    book = Epub()
-    book.open source # http://epubjs.org/documentation/0.3/#bookopen
-    useState_epub_book.set2 book
-  else
-    useState_epub_book.set2 null
+useState_book_instance = create_external_state()
+export useValue_book_instance = -> useState_book_instance().value
+# 设置 Epub 实例
+export make_book = (source) ->
+  book = Epub()
+  book.open source # http://epubjs.org/documentation/0.3/#bookopen
+  useState_book_instance.set2 book
+
+export useRender = ->
+  book = useValue_book_instance()
+  return useMemo2 [book], ->
+    if book
+      return (dom) ->
+        { width } = dom.getBoundingClientRect()
+        rendition = book.renderTo dom, {
+          width
+          flow: 'scrolled-doc'
+        }
+        rendition.display()
+        navigation = await book.loaded.navigation
+        useState_toc.set2 navigation.toc
+
+# render 的 result
+useState_toc = create_external_state()
+export useValue_toc = -> useState_toc().value

@@ -22,7 +22,7 @@
     "stylus": "^0.59.0"
   },
   "dependencies": {
-    "@ppzp/utils.rc": "^0.2.3",
+    "@ppzp/utils.rc": "^0.2.4",
     "epubjs": "^0.3.93",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

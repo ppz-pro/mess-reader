@@ -11,6 +11,8 @@ nav
       transition: flex .3s ease
       flex-basis: 2rem
       overflow: hidden
+      &:first-child
+        border-bottom: 1px solid $color(.06)
       .title
         display: flex
         align-items: center
@@ -20,10 +22,28 @@ nav
         cursor: pointer
         background: $color(.016)
         user-select: none
+        font-weight: bold
+        color: $color(.66)
         &:hover .triangle
-          color: $color()
-        .triangle
-          font-size: 10px
           color: $color(.6)
+        .triangle
+          font-size: 8px
+          color: $color(.38)
           transition: all .3s
           transform: var(--rotate)
+      .body
+        max-height: calc(100% - 2rem)
+        overflow-y: auto
+        a
+          display: block
+          padding: 0 1rem
+          line-height: 2
+          color: $color(.8)
+          text-decoration: none
+          max-width: 100%
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+          &:hover
+            color: $color()
+            background: $color(.1)

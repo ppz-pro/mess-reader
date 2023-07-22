@@ -1,5 +1,6 @@
-import { E, useEffect2, useState2 } from '@ppzp/utils.rc'
-import { useValue_epub_book } from '../state.coffee'
+import { E, useState2 } from '@ppzp/utils.rc'
+import { useValue_book_instance, useValue_toc } from '../state.coffee'
+
 import './index.styl'
 
 export default ->
@@ -23,15 +24,10 @@ Recent = ->
       '这里是最近打开的书'
 
 Toc = ->
-  book = useValue_epub_book()
   state_expand = useExpand()
-
-  state_toc = useState2()
-  useEffect2 [book], ->
-    return unless book
-    toc = await book.loaded.navigation
-
-  return E style: state_expand.style,
+  list = useValue_toc()
+  book = useValue_book_instance()
+  return list && E style: state_expand.style,
     E
       plass: 'title'
       onClick: state_expand.toggle
@@ -39,7 +35,15 @@ Toc = ->
       E '本书目录'
       E plass: 'triangle'
     E plass: 'body',
-      '这里是本书的章节目录'
+      list.map (item) ->
+        E.a
+          key: item.href
+          href: item.href
+          title: item.label
+          onClick: (evt) ->
+            evt.preventDefault()
+            book.rendition.display item.href
+          item.label
 
 useExpand = ->
   state = useState2 true

@@ -3,3 +3,14 @@ section.book
   flex-direction: column
   article
     flex: 1
+    overflow-y: auto
+    & > div
+      /*
+        有时有滚动条，有时没有
+        但 epub 的渲染宽度是要指定的 =>
+        渲染出的内容宽度是固定的 =>
+        固定宽度的内容 + 有或没有的滚动条 = 不定宽度
+        因此 article 里在来一层 wrapper，并设置一个 2rem 的边距，用来缓冲不定宽度
+      */
+      width: calc(100% - 2rem)
+      margin: 0 auto
