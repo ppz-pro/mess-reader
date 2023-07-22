@@ -10,5 +10,5 @@ export default ->
     render ref_viewer.current
   
   return E.section plass: 'book',
-    E.header '标题'
+    E.header 'TODO: 标题'
     E.article E ref: ref_viewer

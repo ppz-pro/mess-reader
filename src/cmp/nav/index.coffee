@@ -21,7 +21,7 @@ Recent = ->
       E '最近打开'
       E plass: 'triangle'
     E plass: 'body',
-      '这里是最近打开的书'
+      'TODO: 这里是最近打开的书'
 
 Toc = ->
   state_expand = useExpand()
