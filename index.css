@@ -1,0 +1,153 @@
+/* stylus:C:\Users\37230\workspace\mess-reader\src\cmp\root.styl */
+.mess_reader_root {
+  height: 100vh;
+  display: flex;
+}
+.mess_reader_root section.book,
+.mess_reader_root section.open {
+  flex: 1;
+}
+
+/* stylus:C:\Users\37230\workspace\mess-reader\src\cmp\nav\index.styl */
+nav {
+  width: 16rem;
+  background: rgba(var(--color_base), 0.016);
+}
+nav .drawer_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+nav .drawer_container > div {
+  transition: flex 0.3s ease;
+  flex-basis: 2rem;
+  overflow: hidden;
+}
+nav .drawer_container > div:first-child {
+  border-bottom: 1px solid rgba(var(--color_base), 0.06);
+}
+nav .drawer_container > div .title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 2rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  background: rgba(var(--color_base), 0.016);
+  user-select: none;
+  font-weight: bold;
+  color: rgba(var(--color_base), 0.66);
+}
+nav .drawer_container > div .title:hover .triangle {
+  color: rgba(var(--color_base), 0.6);
+}
+nav .drawer_container > div .title .triangle {
+  font-size: 8px;
+  color: rgba(var(--color_base), 0.38);
+  transition: all 0.3s;
+  transform: var(--rotate);
+}
+nav .drawer_container > div .body {
+  max-height: calc(100% - 2rem);
+  overflow-y: auto;
+}
+nav .drawer_container > div .body a {
+  display: block;
+  padding: 0 1rem;
+  line-height: 2;
+  color: rgba(var(--color_base), 0.8);
+  text-decoration: none;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+nav .drawer_container > div .body a:hover {
+  color: rgba(var(--color_base), 1);
+  background: rgba(var(--color_base), 0.1);
+}
+
+/* stylus:C:\Users\37230\workspace\mess-reader\src\cmp\book\index.styl */
+section.book {
+  display: flex;
+  flex-direction: column;
+}
+section.book article {
+  flex: 1;
+  overflow-y: auto;
+}
+section.book article > div {
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+}
+
+/* stylus:C:\Users\37230\workspace\mess-reader\src\cmp\open\index.styl */
+section.open {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.open .open_wrapper .row {
+  display: flex;
+}
+section.open .open_wrapper .row button,
+section.open .open_wrapper .row input:not([type]) {
+  font-size: inherit;
+  height: 2rem;
+  padding: 0 1rem;
+}
+section.open .open_wrapper .row input[type=file] {
+  display: none;
+}
+section.open .open_wrapper .row input:not([type]) {
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 20rem;
+  border: 1px solid transparent;
+}
+section.open .open_wrapper .row input:not([type]):focus {
+  border-bottom: 1px solid rgba(var(--color_base), 0.06);
+}
+
+/* stylus:C:\Users\37230\workspace\mess-reader\src\style\global.styl */
+.triangle {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+.triangle::after {
+  content: "";
+  display: block;
+  border: 0.5em solid currentColor;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  transform: translateY(-25%) rotate(45deg);
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  --color_base:
+    0,
+    0,
+    0 ;
+  --color_back_base:
+    255,
+    255,
+    255;
+  font-size: 16px;
+}
+.link {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: #3478f3;
+  cursor: pointer;
+}
+/*# sourceMappingURL=index.css.map */
