@@ -2,6 +2,7 @@ FS = require 'fs'
 
 Plugin_coffee = require 'esbuild-coffeescript'
 { stylusLoader: Plugin_styl } = require 'esbuild-stylus-loader'
+banner = require './banner/index.coffee'
 
 try
   FS.mkdirSync('dist')
@@ -19,6 +20,7 @@ module.exports = {
   minify: true
   outdir: 'dist'
   logLevel: 'info'
+  banner
   plugins: [
     Plugin_coffee()
     Plugin_styl()
