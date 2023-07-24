@@ -15,6 +15,7 @@ module.exports = {
   entryPoints: ['src/index.coffee']
   bundle: true
   sourcemap: true
+  treeShaking: true
   outdir: 'dist'
   logLevel: 'info'
   plugins: [
