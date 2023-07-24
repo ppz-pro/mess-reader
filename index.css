@@ -1,17 +1,47 @@
-/* stylus:C:\Users\37230\workspace\mess-reader\src\cmp\root.styl */
+/* stylus:/home/ppz/workspace/mess-reader/src/cmp/root.styl */
 .mess_reader_root {
   height: 100vh;
   display: flex;
 }
-.mess_reader_root section.book,
-.mess_reader_root section.open {
+.mess_reader_root > .boxx {
   flex: 1;
 }
+.mess_reader_root header {
+  height: 2rem;
+}
+.mess_reader_root section.book,
+.mess_reader_root section.open {
+  height: calc(100% - 2rem);
+}
 
-/* stylus:C:\Users\37230\workspace\mess-reader\src\cmp\nav\index.styl */
+/* stylus:/home/ppz/workspace/mess-reader/src/cmp/header/index.styl */
+header {
+  background: rgba(var(--color_base), calc(var(--alpha_slight) * 2));
+}
+header .header_wrapper {
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header .header_wrapper .item {
+  color: rgba(var(--color_base), 0.5);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0 0.6rem;
+}
+header .header_wrapper .item:not(:first-child) {
+  border-left: 1px solid rgba(var(--color_base), 0.2);
+}
+header .header_wrapper .item:hover {
+  color: rgba(var(--color_base), 1);
+}
+
+/* stylus:/home/ppz/workspace/mess-reader/src/cmp/nav/index.styl */
 nav {
   width: 16rem;
-  background: rgba(var(--color_base), 0.016);
+  background: rgba(var(--color_base), calc(var(--alpha_slight) * 2));
 }
 nav .drawer_container {
   height: 100%;
@@ -24,7 +54,7 @@ nav .drawer_container > div {
   overflow: hidden;
 }
 nav .drawer_container > div:first-child {
-  border-bottom: 1px solid rgba(var(--color_base), 0.06);
+  border-bottom: 1px solid rgba(var(--color_base), calc(var(--alpha_slight) * 2));
 }
 nav .drawer_container > div .title {
   display: flex;
@@ -64,10 +94,10 @@ nav .drawer_container > div .body a {
 }
 nav .drawer_container > div .body a:hover {
   color: rgba(var(--color_base), 1);
-  background: rgba(var(--color_base), 0.1);
+  background: rgba(var(--color_base), calc(var(--alpha_slight) * 1));
 }
 
-/* stylus:C:\Users\37230\workspace\mess-reader\src\cmp\book\index.styl */
+/* stylus:/home/ppz/workspace/mess-reader/src/cmp/book/index.styl */
 section.book {
   display: flex;
   flex-direction: column;
@@ -79,9 +109,10 @@ section.book article {
 section.book article > div {
   width: calc(100% - 2rem);
   margin: 0 auto;
+  padding-bottom: 3rem;
 }
 
-/* stylus:C:\Users\37230\workspace\mess-reader\src\cmp\open\index.styl */
+/* stylus:/home/ppz/workspace/mess-reader/src/cmp/open/index.styl */
 section.open {
   display: flex;
   align-items: center;
@@ -110,7 +141,7 @@ section.open .open_wrapper .row input:not([type]):focus {
   border-bottom: 1px solid rgba(var(--color_base), 0.06);
 }
 
-/* stylus:C:\Users\37230\workspace\mess-reader\src\style\global.styl */
+/* stylus:/home/ppz/workspace/mess-reader/src/style/global.styl */
 .triangle {
   display: inline-block;
   width: 1em;
@@ -141,7 +172,11 @@ html {
     255,
     255,
     255;
+  --alpha_slight: 0.01;
+  color: rgba(var(--color_base), 1);
+  background-color: rgba(var(--color_back_base), 1);
   font-size: 16px;
+  line-height: 1;
 }
 .link {
   outline: none;

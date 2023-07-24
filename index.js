@@ -49742,9 +49742,14 @@
   };
   var make_book = function(source) {
     var book;
-    book = src_default();
-    book.open(source);
-    return useState_book_instance.set2(book);
+    if (source) {
+      book = src_default();
+      book.open(source);
+      return useState_book_instance.set2(book);
+    } else {
+      useState_book_instance.set2(null);
+      return useState_toc.set2(null);
+    }
   };
   var useRender = function() {
     var book;
@@ -49756,7 +49761,9 @@
           ({ width } = dom.getBoundingClientRect());
           rendition = book.renderTo(dom, {
             width,
-            flow: "scrolled-doc"
+            flow: "scrolled-doc",
+            allowScriptedContent: true
+            // 这个放在设置里，让用户开启好一点
           });
           rendition.display();
           navigation = await book.loaded.navigation;
@@ -49770,6 +49777,28 @@
     return useState_toc().value;
   };
 
+  // src/cmp/header/index.coffee
+  function header_default() {
+    var render;
+    render = useRender();
+    return create_element_default.header(create_element_default({
+      plass: "header_wrapper"
+    }, render && create_element_default({
+      plass: "item",
+      onClick: function() {
+        return make_book();
+      }
+    }, "\u6362\u4E00\u672C"), create_element_default.a({
+      plass: "item",
+      target: "_blank",
+      href: "https://zlibrary-asia.se/"
+    }, "Z Library"), create_element_default.a({
+      plass: "item",
+      target: "_blank",
+      href: "https://github.com/ppz-pro/mess-reader"
+    }, "Github")));
+  }
+
   // src/cmp/nav/index.coffee
   var Recent;
   var Toc;
@@ -49777,11 +49806,11 @@
   function nav_default() {
     return create_element_default.nav(create_element_default({
       plass: "drawer_container"
-    }, create_element_default(Recent), create_element_default(Toc)));
+    }, create_element_default(Toc), create_element_default(Recent)));
   }
   Recent = function() {
     var state_expand;
-    state_expand = useExpand();
+    state_expand = useExpand(false);
     return create_element_default({
       style: state_expand.style
     }, create_element_default({
@@ -49795,7 +49824,7 @@
   };
   Toc = function() {
     var book, list, state_expand;
-    state_expand = useExpand();
+    state_expand = useExpand(true);
     list = useValue_toc();
     book = useValue_book_instance();
     return list && create_element_default({
@@ -49809,7 +49838,7 @@
       plass: "body"
     }, list.map(function(item) {
       return create_element_default.a({
-        key: item.href,
+        key: item.id,
         href: item.href,
         title: item.label,
         onClick: function(evt) {
@@ -49819,9 +49848,9 @@
       }, item.label);
     })));
   };
-  useExpand = function() {
+  useExpand = function(init_value) {
     var state;
-    state = useState22(true);
+    state = useState22(init_value);
     return {
       style: {
         flexGrow: state.value && 1 || 0,
@@ -49847,7 +49876,7 @@
     });
     return create_element_default.section({
       plass: "book"
-    }, create_element_default.header("TODO: \u6807\u9898"), create_element_default.article(create_element_default({
+    }, create_element_default.article(create_element_default({
       ref: ref_viewer
     })));
   }
@@ -49925,9 +49954,11 @@
   function root_default() {
     var render;
     render = useRender();
-    return create_element_default.div({
+    return create_element_default({
       plass: "mess_reader_root"
-    }, create_element_default(nav_default), render ? create_element_default(book_default2) : create_element_default(open_default));
+    }, create_element_default(nav_default), create_element_default({
+      plass: "boxx"
+    }, create_element_default(header_default), render ? create_element_default(book_default2) : create_element_default(open_default)));
   }
 
   // src/index.coffee
