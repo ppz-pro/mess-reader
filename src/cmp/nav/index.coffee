@@ -6,12 +6,12 @@ import './index.styl'
 export default ->
   return E.nav(
     E plass: 'drawer_container',
-      E Recent
       E Toc
+      E Recent
   )
 
 Recent = ->
-  state_expand = useExpand()
+  state_expand = useExpand false
   
   return E style: state_expand.style,
     E
@@ -24,7 +24,7 @@ Recent = ->
       'TODO: 这里是最近打开的书'
 
 Toc = ->
-  state_expand = useExpand()
+  state_expand = useExpand true
   list = useValue_toc()
   book = useValue_book_instance()
   return list && E style: state_expand.style,
@@ -45,8 +45,8 @@ Toc = ->
             book.rendition.display item.href
           item.label
 
-useExpand = ->
-  state = useState2 true
+useExpand = (init_value) ->
+  state = useState2 init_value
   return {
     style:
       flexGrow: state.value && 1 || 0
