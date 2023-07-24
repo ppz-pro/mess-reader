@@ -20,6 +20,7 @@ export useRender = ->
         rendition = book.renderTo dom, {
           width
           flow: 'scrolled-doc'
+          allowScriptedContent: true # 这个放在设置里，让用户开启好一点
         }
         rendition.display()
         navigation = await book.loaded.navigation
