@@ -37,7 +37,7 @@ Toc = ->
     E plass: 'body',
       list.map (item) ->
         E.a
-          key: item.href
+          key: item.id
           href: item.href
           title: item.label
           onClick: (evt) ->

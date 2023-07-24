@@ -1,6 +1,10 @@
 .mess_reader_root
   height: 100vh
   display: flex
+  & > .boxx
+    flex: 1
+  header
+    height: 2rem
   section
     &.book, &.open
-      flex: 1
+      height: calc(100% - 2rem)

@@ -1,4 +1,4 @@
-import { useEffect2, useMemo2 } from '@ppzp/utils.rc'
+import { useMemo2 } from '@ppzp/utils.rc'
 import create_external_state from 'state_mini'
 import Epub from 'epubjs'
 
@@ -7,9 +7,13 @@ useState_book_instance = create_external_state()
 export useValue_book_instance = -> useState_book_instance().value
 # 设置 Epub 实例
 export make_book = (source) ->
-  book = Epub()
-  book.open source # http://epubjs.org/documentation/0.3/#bookopen
-  useState_book_instance.set2 book
+  if source
+    book = Epub()
+    book.open source # http://epubjs.org/documentation/0.3/#bookopen
+    useState_book_instance.set2 book
+  else
+    useState_book_instance.set2 null
+    useState_toc.set2 null
 
 export useRender = ->
   book = useValue_book_instance()

@@ -2,6 +2,8 @@ $color(alpha = 1)
   s('rgba(var(--color_base), %s)', alpha)
 $color_back(alpha = 1)
   s('rgba(var(--color_back_base), %s)', alpha)
+$color_slight(x = 1)
+  s('rgba(var(--color_base), calc(var(--alpha_slight) * %s))', x)
 
 font_lg()
   font-size: 1.06rem

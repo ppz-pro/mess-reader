@@ -1,0 +1,19 @@
+@require '../../style/base'
+
+header
+  background: $color_slight(2)
+  .header_wrapper
+    padding: 0 1rem
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    .item
+      color: $color(.5)
+      font-size: .9rem
+      cursor: pointer
+      padding: 0 .6rem
+      &:not(:first-child)
+        border-left: 1px solid $color(.2)
+      &:hover
+        color: $color()

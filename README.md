@@ -1,8 +1,6 @@
 # mess-reader
 一个 epub 阅读器，快[试试看](https://ppz-pro.github.io/mess-reader/)
 
-> 另外，世界最大的盗版电子书**免费下载**网站 [Z-Library https://zlibrary-asia.se/](https://zlibrary-asia.se/) 大家千万不要用
-
 ## 开发
 ``` bash
 # 克隆仓库
