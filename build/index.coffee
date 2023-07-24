@@ -16,6 +16,7 @@ module.exports = {
   bundle: true
   sourcemap: true
   treeShaking: true
+  minify: true
   outdir: 'dist'
   logLevel: 'info'
   plugins: [
