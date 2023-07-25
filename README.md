@@ -22,7 +22,7 @@ npm run dev
 ##### pwa
 + [最小 manifest](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/web-app-manifests#manifest-members)
 + [注册 service worker](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/#step-5---add-a-service-worker)
-+ [关联文件](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/web-app-manifests#associate-your-app-with-files)
++ [关联文件](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/handle-files)
 + [manifest MDN](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
 ## 缘起
