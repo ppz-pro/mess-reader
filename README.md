@@ -19,6 +19,12 @@ npm run dev
 + [stylus](https://stylus-lang.com/) 样式
 + [epubjs](https://github.com/futurepress/epub.js/) 解析、展示 epub 文件，[demo](http://futurepress.github.io/epub.js/examples/spreads.html)
 
+##### pwa
++ [最小 manifest](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/web-app-manifests#manifest-members)
++ [注册 service worker](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/#step-5---add-a-service-worker)
++ [关联文件](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/web-app-manifests#associate-your-app-with-files)
++ [manifest MDN](https://developer.mozilla.org/en-US/docs/Web/Manifest)
+
 ## 缘起
 刚才看完[电影](https://movie.douban.com/subject/1292450/)在豆瓣上瞎看，就看到[一个感兴趣的小说](https://book.douban.com/subject/35556905/)。搜索、下载之后，是一个 epub 文件。怎么打开呢？记得有个叫 [neat reader](https://www.neat-reader.cn/) 的软件，我用过一次，说实话，真的很不 neat。
 

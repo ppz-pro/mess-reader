@@ -10,7 +10,9 @@ catch err
   console.debug 'info: 文件夹 dist 未创建'
   # console.error err
 
-FS.copyFileSync('src/index.html', 'dist/index.html')
+FS.copyFileSync('public/index.html', 'dist/index.html')
+FS.copyFileSync('public/service_worker.js', 'dist/service_worker.js')
+FS.copyFileSync('public/manifest.json', 'dist/manifest.json')
 
 module.exports = {
   entryPoints: ['src/index.coffee']
