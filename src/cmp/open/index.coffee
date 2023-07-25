@@ -28,7 +28,7 @@ OpenFromLocal = ->
         reader = new FileReader()
         reader.onload = (evt) ->
           make_book evt.target.result
-        reader.readAsArrayBuffer evt.target.files[0] 
+        reader.readAsArrayBuffer evt.target.files[0]
 
 OpenFromURI = ->
   ref_input = useRef()
