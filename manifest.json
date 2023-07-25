@@ -1,7 +1,7 @@
 {
   "name": "epub 阅读器",
   "lang": "zh-CN",
-  "display": "minimal-ui",
+  "display": "standalone",
   "start_url": "/mess-reader/",
   "icons": [{
     "src": "icon.svg",
