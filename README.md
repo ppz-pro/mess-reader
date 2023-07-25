@@ -1,6 +1,9 @@
 # mess-reader
 一个 epub 阅读器，快[试试看](https://ppz-pro.github.io/mess-reader/)
 
++ 可安装
++ 安装后，可通过双击 .epub 文件打开（就像双击 .doc 文件打开 word）
+
 ## 开发
 ``` bash
 # 克隆仓库
