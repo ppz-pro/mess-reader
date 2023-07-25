@@ -9,6 +9,7 @@
   }],
   "file_handlers": [
     {
+      "action": "/mess-reader/",
       "accept": {
         "application/epub+zip": [
           ".epub"
