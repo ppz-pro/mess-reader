@@ -13,6 +13,7 @@ catch err
 FS.copyFileSync('public/index.html', 'dist/index.html')
 FS.copyFileSync('public/service_worker.js', 'dist/service_worker.js')
 FS.copyFileSync('public/manifest.json', 'dist/manifest.json')
+FS.copyFileSync('public/icon.svg', 'dist/icon.svg')
 
 module.exports = {
   entryPoints: ['src/index.coffee']
