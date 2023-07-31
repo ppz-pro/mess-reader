@@ -1,0 +1,23 @@
+@require '../../../style/base'
+
+.dialog_container
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  z-index: 100
+  display: flex
+  align-items: center
+  justify-content: center
+  background: $color_slight(10)
+  .dialog_wrapper
+    background: $color_back()
+    position: relative
+    padding: 1rem 1.5rem
+    .dialog_btn_close
+      position: absolute
+      padding: .5rem
+      font-size: .9rem
+      right: 0
+      top: 0
