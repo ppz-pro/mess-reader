@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Lemonada
+- Font Author: Copyright 2011 The Lemonada Project Authors (https://github.com/Gue3bara/Lemonada)
+- Font Source: http://fonts.gstatic.com/s/lemonada/v26/0QI-MXFD9oygTWy_R-FFlwV-bgfR7QJGeut2mfWc3Z2pTg.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
