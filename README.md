@@ -28,6 +28,10 @@ npm run dev
 + [关联文件](https://learn.microsoft.com/en-us/microsoft-edge/progressive-web-apps-chromium/how-to/handle-files)
 + [manifest MDN](https://developer.mozilla.org/en-US/docs/Web/Manifest)
 
+##### 其他
++ [CoffeeScript](https://coffeescript.org/)
++ [图标](https://favicon.io/favicon-generator/)
+
 ## 缘起
 刚才看完[电影](https://movie.douban.com/subject/1292450/)在豆瓣上瞎看，就看到[一个感兴趣的小说](https://book.douban.com/subject/35556905/)。搜索、下载之后，是一个 epub 文件。怎么打开呢？记得有个叫 [neat reader](https://www.neat-reader.cn/) 的软件，我用过一次，说实话，真的很不 neat。
 
