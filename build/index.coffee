@@ -23,6 +23,8 @@ module.exports = {
   outdir: 'dist'
   logLevel: 'info'
   banner
+  loader:
+    '.woff2': 'file'
   plugins: [
     Plugin_coffee()
     Plugin_styl()
