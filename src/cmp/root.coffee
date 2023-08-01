@@ -1,5 +1,5 @@
 import { E, useMount } from '@ppzp/utils.rc'
-import { useRender, make_book } from './state.coffee'
+import { useRender, make_book } from '../state/render.coffee'
 import './root.styl'
 
 import Header from './header/index.coffee'
