@@ -1,0 +1,42 @@
+@require '../../../../style/base'
+
+.radio_btns_container
+  display: flex
+  align-items: center
+  label, input
+    cursor: pointer
+  label
+    display: flex
+    align-items: center
+    margin-right: 1em
+  input[type=radio]
+    font-size: 14px
+    display: inline-block
+    visibility: hidden
+    padding: 0
+    margin: 0
+    margin-right: .5em
+    position: relative
+    width: 1em
+    height: 1em
+    &::before, &::after
+      content: ''
+      display: block
+      position: absolute
+      visibility: visible
+      border-radius: 50%
+    &::before
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      border: .1em solid $color(.8)
+    &::after
+      top: .3em
+      right: .3em
+      bottom: .3em
+      left: .3em
+      background: $color(.18)
+    &:checked::after
+      background: $color()
+
