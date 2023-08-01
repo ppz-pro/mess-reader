@@ -8,12 +8,15 @@ header
     display: flex
     align-items: center
     justify-content: flex-end
-    .item
+    & > .item
       color: $color(.5)
       font-size: .9rem
       cursor: pointer
-      padding: 0 .6rem
-      &:not(:first-child)
-        border-left: 1px solid $color(.2)
+      &.icon
+        text-decoration: none
+        padding-left: 1rem
+      &:not(.icon)
+        padding: 0 1rem
+        border-right: 1px solid $color(.2)
       &:hover
         color: $color()
