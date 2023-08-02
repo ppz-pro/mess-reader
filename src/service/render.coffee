@@ -1,6 +1,6 @@
 import create_external_state from 'state_mini'
 import { get_book_instance } from './book.coffee'
-import { change_iframe_color } from './theme.coffee'
+import { set_iframe_color } from './theme.coffee'
 
 # render 到 dom
 export render = (dom) ->
@@ -22,4 +22,4 @@ useState_display_target = create_external_state()
 export useValue_display_target = -> useState_display_target().value
 export display = (target) ->
   await get_book_instance().rendition.display target
-  change_iframe_color()
+  set_iframe_color()

@@ -3,7 +3,7 @@ import color_list from 'src/constant/theme/color/index.coffee'
 
 export useState_color = create_external_state color_list[1]
 
-export change_iframe_color = ->
+export set_iframe_color = ->
   style = useState_color.get().style
   iframe = document.getElementsByTagName('iframe')[0]?.contentDocument
   if iframe
@@ -21,7 +21,7 @@ change_app_color = (color) ->
   document.body.style.setProperty '--color_base', style.color_base
   document.body.style.setProperty '--color_back_base', style.color_back_base
   document.body.style.setProperty '--alpha_slight', style.alpha_slight
-  change_iframe_color()
+  set_iframe_color()
 # 现在就设置颜色
 change_app_color useState_color.get()
 # state_color 变时，再设置

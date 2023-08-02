@@ -2,6 +2,7 @@
 
 .radio_btns_container
   display: flex
+  flex-wrap: wrap
   align-items: center
   label, input
     cursor: pointer
@@ -28,7 +29,7 @@
       visibility: visible
       border-radius: 50%
     &::before
-      border: .1em solid $color(.8)
+      border: 1px solid $color(.8)
       top: 0
       right: 0
       bottom: 0
@@ -36,7 +37,7 @@
     &::after
       width: .5em
       height: .5em
-      background: $color(.18)
+      background: $color(.38)
     &:checked::after
       background: $color()
 
