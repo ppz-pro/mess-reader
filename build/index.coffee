@@ -10,7 +10,7 @@ catch err
   console.debug 'info: 文件夹 dist 未创建'
   # console.error err
 
-FS.cpSync('public', 'dist', {
+FS.cpSync('src/public', 'dist', {
   recursive: true
 })
 
