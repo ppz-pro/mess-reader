@@ -1,22 +1,19 @@
 @require 'base'
 
 header
-  background: $color_slight(2)
   .header_wrapper
-    padding: 0 1rem
-    height: 100%
+    padding-right: 1rem
+    line-height: var(--height)
     display: flex
     align-items: center
     justify-content: flex-end
     & > .item
-      color: $color(.5)
-      font-size: .9rem
+      color: $color(.688)
+      font-size: 1rem
       cursor: pointer
+      padding: 0 .88rem
       &.icon
         text-decoration: none
-        padding-left: 1rem
-      &:not(.icon)
-        padding: 0 1rem
-        border-right: 1px solid $color(.2)
+        font-size: 1.58rem
       &:hover
         color: $color()

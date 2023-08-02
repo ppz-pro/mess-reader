@@ -10,8 +10,9 @@ export default ->
 
   return E.header(
     E plass: 'header_wrapper',
-      book && E
+      book && E.a
         plass: 'item'
+        href: 'javascript:void(0)'
         onClick: -> make_book()
         '换一本'
       
@@ -21,12 +22,12 @@ export default ->
         href: 'https://zlibrary-asia.se/'
         'Z Library'
       
-      E Settings
-      
       E.a
         plass: 'item icon'
         target: '_blank'
         href: 'https://github.com/ppz-pro/mess-reader'
         E Icon, plass: 'github', title: 'Github'
+      
+      E Settings
       
   )

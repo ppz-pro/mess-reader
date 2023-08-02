@@ -8,10 +8,12 @@
   label
     display: flex
     align-items: center
-    margin-right: 1em
+    margin-right: 2em
   input[type=radio]
-    font-size: 14px
-    display: inline-block
+    font-size: inherit
+    display: inline-flex
+    align-items: center
+    justify-content: center
     visibility: hidden
     padding: 0
     margin: 0
@@ -26,16 +28,14 @@
       visibility: visible
       border-radius: 50%
     &::before
+      border: .1em solid $color(.8)
       top: 0
       right: 0
       bottom: 0
       left: 0
-      border: .1em solid $color(.8)
     &::after
-      top: .3em
-      right: .3em
-      bottom: .3em
-      left: .3em
+      width: .5em
+      height: .5em
       background: $color(.18)
     &:checked::after
       background: $color()

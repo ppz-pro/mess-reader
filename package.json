@@ -1,6 +1,6 @@
 {
   "name": "mess-reader",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "",
   "scripts": {
     "dev": "coffee build/dev.coffee",

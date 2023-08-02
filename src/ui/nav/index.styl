@@ -1,5 +1,7 @@
 @require 'base'
 
+$title_height = 2.5rem
+
 nav
   width: 16rem
   background: $color_slight(2)
@@ -9,7 +11,7 @@ nav
     flex-direction: column
     & > div
       transition: flex .3s ease
-      flex-basis: 2rem
+      flex-basis: $title_height
       overflow: hidden
       &:first-child
         border-bottom: 1px solid $color_slight(2)
@@ -17,13 +19,13 @@ nav
         display: flex
         align-items: center
         justify-content: space-between
-        height: 2rem
-        padding: 0 1rem
+        height: $title_height
+        padding: 0 1.5rem
         cursor: pointer
-        background: $color(.016)
+        background: $color_slight(2)
         user-select: none
         font-weight: bold
-        color: $color(.66)
+        color: $color(.68)
         &:hover .triangle
           color: $color(.6)
         .triangle
@@ -32,12 +34,12 @@ nav
           transition: all .3s
           transform: var(--rotate)
       .body
-        max-height: calc(100% - 2rem)
+        max-height: s('calc(100% - %s)', $title_height)
         overflow-y: auto
         a
           display: block
-          padding: 0 1rem
-          line-height: 2
+          padding: 0 1.5rem
+          line-height: 2.5
           color: $color(.8)
           text-decoration: none
           max-width: 100%
