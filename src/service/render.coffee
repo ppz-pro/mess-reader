@@ -1,36 +1,25 @@
-import { useMemo2 } from '@ppzp/utils.rc'
 import create_external_state from 'state_mini'
-import Epub from 'epubjs'
+import { get_book_instance } from './book.coffee'
+import { change_iframe_color } from './theme.coffee'
 
-# Epub 实例
-useState_book_instance = create_external_state()
-export useValue_book_instance = -> useState_book_instance().value
-# 设置 Epub 实例
-export make_book = (source) ->
-  if source
-    book = Epub()
-    book.open source # http://epubjs.org/documentation/0.3/#bookopen
-    useState_book_instance.set2 book
-  else
-    useState_book_instance.set2 null
-    useState_toc.set2 null
+# render 到 dom
+export render = (dom) ->
+  { width } = dom.getBoundingClientRect()
+  book = get_book_instance()
+  book.renderTo dom, {
+    width
+    flow: 'scrolled-doc'
+    allowScriptedContent: true # 这个放在设置里，让用户开启好一点
+  }
+  book.rendition.on 'displayed', (section) ->
+    # section: http://epubjs.org/documentation/0.3/#section
+    # console.debug 'displayed', section.href
+    useState_display_target.set2 section.href
+  display()
 
-export useRender = ->
-  book = useValue_book_instance()
-  return useMemo2 [book], ->
-    if book
-      return (dom) ->
-        { width } = dom.getBoundingClientRect()
-        rendition = book.renderTo dom, {
-          width
-          flow: 'scrolled-doc'
-          allowScriptedContent: true # 这个放在设置里，让用户开启好一点
-        }
-
-        rendition.display()
-        navigation = await book.loaded.navigation
-        useState_toc.set2 navigation.toc
-
-# render 的 result
-useState_toc = create_external_state()
-export useValue_toc = -> useState_toc().value
+# 当前章节
+useState_display_target = create_external_state()
+export useValue_display_target = -> useState_display_target().value
+export display = (target) ->
+  await get_book_instance().rendition.display target
+  change_iframe_color()

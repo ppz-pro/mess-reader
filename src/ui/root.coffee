@@ -1,5 +1,5 @@
 import { E, useMount } from '@ppzp/utils.rc'
-import { useRender, make_book } from 'src/service/render.coffee'
+import { useValue_book_instance, make_book } from 'src/service/book.coffee'
 import './root.styl'
 
 import Header from './header/index.coffee'
@@ -8,7 +8,7 @@ import Book from './book/index.coffee'
 import Open from './open/index.coffee'
 
 export default ->
-  render = useRender()
+  book = useValue_book_instance()
   useMount ->
     # root 挂载好后，检查是否为“通过双击 .epub 文件”来打开应用
     window.launchQueue?.setConsumer (params) ->
@@ -18,7 +18,7 @@ export default ->
     E Nav
     E plass: 'boxx',
       E Header
-      if render
+      if book
         E Book
       else
         E Open

@@ -1,5 +1,6 @@
 import { E, useState2 } from '@ppzp/utils.rc'
-import { useValue_book_instance, useValue_toc } from 'src/service/render.coffee'
+import { useValue_toc } from 'src/service/book.coffee'
+import { display, useValue_display_target } from 'src/service/render.coffee'
 
 import './index.styl'
 
@@ -26,7 +27,7 @@ Recent = ->
 Toc = ->
   state_expand = useExpand true
   list = useValue_toc()
-  book = useValue_book_instance()
+  current_target = useValue_display_target()
   return list && E style: state_expand.style,
     E
       plass: 'title'
@@ -40,9 +41,10 @@ Toc = ->
           key: item.id
           href: item.href
           title: item.label
+          plass: [current_target == item.href && 'selected']
           onClick: (evt) ->
             evt.preventDefault()
-            book.rendition.display item.href
+            display item.href
           item.label
 
 useExpand = (init_value) ->

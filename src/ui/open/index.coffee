@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { E, useState2 } from '@ppzp/utils.rc'
-import { make_book } from 'src/service/render.coffee'
+import { make_book } from 'src/service/book.coffee'
 import './index.styl'
 
 export default ->

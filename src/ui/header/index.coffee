@@ -1,16 +1,16 @@
 import { E } from '@ppzp/utils.rc'
-import { make_book, useRender } from 'src/service/render.coffee'
+import { make_book, useValue_book_instance } from 'src/service/book.coffee'
 import Settings from './settings/theme/index.coffee'
 import Icon from '../common/iconfont/index.coffee'
 
 import './index.styl'
 
 export default ->
-  render = useRender()
+  book = useValue_book_instance()
 
   return E.header(
     E plass: 'header_wrapper',
-      render && E
+      book && E
         plass: 'item'
         onClick: -> make_book()
         '换一本'

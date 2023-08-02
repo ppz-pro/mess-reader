@@ -1,12 +1,11 @@
 import { useRef } from 'react'
 import { E, useEffect2 } from '@ppzp/utils.rc'
-import { useRender } from 'src/service/render.coffee'
+import { render } from 'src/service/render.coffee'
 import './index.styl'
 
 export default ->
-  render = useRender()
   ref_viewer = useRef()
-  useEffect2 [render, ref_viewer], ->
+  useEffect2 [ref_viewer], ->
     render ref_viewer.current
   
   return E.section plass: 'book',
