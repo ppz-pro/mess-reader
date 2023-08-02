@@ -6,10 +6,18 @@
     padding: 2rem
   .row
     display: flex
-    width: 26em
+    width: 33em
+    & + .row
+      margin-top: 1rem
     .key
-      width: 4rem
+      width: 5rem
+      white-space: nowrap
       text-align: right
       margin-right: 3rem
       opacity: .68
       font-weight: bold
+    .radio_btns_container
+      flex: 1
+      label
+        width: 6rem
+        margin-right: 0

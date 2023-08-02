@@ -4,8 +4,8 @@ import dim from './dim.coffee'
 import brown from './brown.coffee'
 
 export default [
-  light
   brown
-  dim
   dark
+  light
+  dim
 ]
