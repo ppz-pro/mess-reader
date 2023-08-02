@@ -37,6 +37,7 @@ module.exports = {
     Plugin_coffee()
     Plugin_alias {
       '#svice': abs_path 'src/ssu/svice'
+      '#constant': abs_path 'src/constant'
     }
     Plugin_styl {
       stylusOptions:
