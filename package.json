@@ -19,6 +19,7 @@
   "devDependencies": {
     "esbuild": "^0.18.14",
     "esbuild-coffeescript": "^2.2.0",
+    "esbuild-plugin-path-alias": "^1.0.7",
     "esbuild-stylus-loader": "^0.4.2",
     "gh-pages": "^5.0.0",
     "stylus": "^0.59.0"
