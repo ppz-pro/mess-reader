@@ -7,6 +7,9 @@ export change_iframe_color = ->
   style = useState_color.get().style
   iframe = document.getElementsByTagName('iframe')[0]?.contentDocument
   if iframe
+    iframe.body.style.lineHeight = 1.8
+    iframe.body.style.letterSpacing = '.06em'
+
     iframe.body.style.color = "rgb(#{style.color_base})"
     iframe.body.style.background = "rgb(#{style.color_back_base})"
   # else
