@@ -2,8 +2,8 @@ import { E, useState2 } from '@ppzp/utils.rc'
 import Dialog from '../../../common/dialog/index.coffee'
 import Iconfont from '../../../common/iconfont/index.coffee'
 import { RadioButtons } from '../../../common/form/radio/index.coffee'
-import { useState_color } from '../../../../state/theme.coffee'
-import color_list from '#constant/theme/color/index.coffee'
+import { useState_color } from 'src/service/theme.coffee'
+import color_list from 'src/constant/theme/color/index.coffee'
 import './index.styl'
 
 export default ->

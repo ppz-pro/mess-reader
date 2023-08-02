@@ -32,12 +32,6 @@ npm run dev
 + [CoffeeScript](https://coffeescript.org/)
 + [图标](https://favicon.io/favicon-generator/)
 
-##### 代码架构
-数据驱动，state -> service -> ui
-+ state (external state)
-+ service (ui <==> state)
-+ ui (React Components)
-
 ## 缘起
 刚才看完[电影](https://movie.douban.com/subject/1292450/)在豆瓣上瞎看，就看到[一个感兴趣的小说](https://book.douban.com/subject/35556905/)。搜索、下载之后，是一个 epub 文件。怎么打开呢？记得有个叫 [neat reader](https://www.neat-reader.cn/) 的软件，我用过一次，说实话，真的很不 neat。
 

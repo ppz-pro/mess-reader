@@ -1,5 +1,5 @@
 import { E } from '@ppzp/utils.rc'
-import { make_book, useRender } from '../../state/render.coffee'
+import { make_book, useRender } from 'src/service/render.coffee'
 import Settings from './settings/theme/index.coffee'
 import Icon from '../common/iconfont/index.coffee'
 

@@ -1,5 +1,5 @@
 import { E, useState2 } from '@ppzp/utils.rc'
-import { useValue_book_instance, useValue_toc } from '../../state/render.coffee'
+import { useValue_book_instance, useValue_toc } from 'src/service/render.coffee'
 
 import './index.styl'
 

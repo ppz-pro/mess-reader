@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { E, useEffect2 } from '@ppzp/utils.rc'
-import { useRender } from '../../state/render.coffee'
+import { useRender } from 'src/service/render.coffee'
 import './index.styl'
 
 export default ->

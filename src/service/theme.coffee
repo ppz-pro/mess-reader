@@ -1,5 +1,5 @@
 import create_external_state from 'state_mini'
-import color_list from '#constant/theme/color/index.coffee'
+import color_list from 'src/constant/theme/color/index.coffee'
 
 export useState_color = create_external_state color_list[1]
 

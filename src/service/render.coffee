@@ -1,7 +1,6 @@
 import { useMemo2 } from '@ppzp/utils.rc'
 import create_external_state from 'state_mini'
 import Epub from 'epubjs'
-import { useState_color, color_list } from './theme.coffee'
 
 # Epub 实例
 useState_book_instance = create_external_state()
