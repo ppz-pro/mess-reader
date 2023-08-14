@@ -6,6 +6,10 @@ useState_book_instance = create_external_state()
 export useValue_book_instance = -> useState_book_instance().value
 export get_book_instance = -> useState_book_instance.get()
 
+# loading
+useState_book_loading = create_external_state()
+export useValue_book_loading = -> useState_book_loading().value
+
 # 书的目录
 useState_toc = create_external_state()
 useState_book_instance.subscribe (book) ->
@@ -18,7 +22,9 @@ export useValue_toc = -> useState_toc().value
 export make_book = (source) ->
   if source
     book = Epub()
-    book.open source # http://epubjs.org/documentation/0.3/#bookopen
+    useState_book_loading.set2 true
+    await book.open source # http://epubjs.org/documentation/0.3/#bookopen
+    useState_book_loading.set2 false
     useState_book_instance.set2 book
   else
     useState_book_instance.set2 null
